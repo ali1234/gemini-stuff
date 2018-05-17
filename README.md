@@ -59,7 +59,20 @@ If you forgot to blacklist Modem Manager the following will happen:
 3. Modem manager will see a new serial port and attempt to probe it for modems.
 4. The Download Agent will be confused by the AT commands and will crash, but the device will not reset.
 
-It will not enumerate on USB and will just keep on running the Download Agent firmware until the battery goes flat. To escape from this you have to hold down both the escape key and the voice button for about 30 seconds, and then it will reboot.
+You will see the following error on the flash tool console output:
+
+```
+USB port is obtained. path name(/dev/ttyACM0), port name(/dev/ttyACM0)
+USB port detected: /dev/ttyACM0
+BROM connected
+Downloading & Connecting to DA...
+connect DA end stage: 2, enable DRAM in 1st DA: 0
+Failed to Connect DA: STATUS_PROTOCOL_ERR
+Disconnect!
+BROM Exception! ( ERROR : STATUS_PROTOCOL_ERR (-1073676283) , MSP ERROE CODE : 0x00. 
+```
+
+The device will not enumerate on USB and will just keep on running the Download Agent firmware until the battery goes flat. To escape from this you have to hold down both the escape key and the voice button for about 30 seconds, and then it will reboot.
 
 If you managed to get Linux installed, hold the appropriate button combination, and you should see the Planet logo with a Penguin in the bottom right corner. It is quite big, you will not miss it. After this the screen will go black for a very long time. Wait, and eventually you will get to the Linux login screen.
 
