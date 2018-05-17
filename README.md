@@ -65,15 +65,18 @@ If you managed to get Linux installed, hold the appropriate button combination, 
 
 ## Linux
 
-There is no GPU driver and the screen redraw rate is excruciatingly slow - about 2 frames per second.
+The current Debian image is extremely broken:
 
-Attempting to change the keyboard layout or session at the login screen will crash the device. Hold escape + voice button until it restarts.
+1. There is no GPU driver and the screen redraw rate is excruciatingly slow - about 2 frames per second.
+2. Attempting to change the keyboard layout or session at the login screen will crash the device. Hold escape + voice button until it restarts.
+3. The rounded corners of the display hide parts of the panel.
+4. After you log in (the pasword is gemini) you will get another black screen which lasts for about a minute. Then a dialog will ask you which window manager you want. You get lx panel regardless of what you choose, so this seems a bit pointless.
+5. If you open QTerminal you will get a window where you can type things but nothing happens. UXTerm just gives a locale error. Xterm gives a working shell.
+6. The function key does not work, so you can't type any special characters like '-' and '/' which makes the shell completely useless anyway.
 
-The rounded corners of the display hide parts of the panel.
+To possibly fix some of these problems you need to follow the instructions at: https://github.com/gemian/gemini-keyboard-apps/wiki/DebianTP
 
-After you log in (the pasword is gemini) you will get another black screen which lasts for about a minute. Then a dialog will ask you which window manager you want. You get lx panel regardless of what you choose, so this seems a bit pointless.
+Note that you can only do this over ssh as you need to type at least one command containing '-'.
 
-If you open QTerminal you will get a window where you can type things but nothing happens. UXTerm just gives a locale error. Xterm gives a working shell.
 
-The function key does not work, so you can't type any special characters like '-' and '/' which makes the shell completely useless anyway.
 
