@@ -1,9 +1,9 @@
-### Gemini PDA Notes
+# Gemini PDA Notes
 
-Official Flashing Guide: http://support.planetcom.co.uk/index.php/Flashing_Guide
-Flashing tool for Linux: http://support.planetcom.co.uk/download/FlashToolLinux.tgz
-Firmware downloads: http://support.planetcom.co.uk/index.php/Gemini_Firmware
-Linux scatter generator: http://support.planetcom.co.uk/download/partitionTool.html
+* Official Flashing Guide: http://support.planetcom.co.uk/index.php/Flashing_Guide
+* Flashing tool for Linux: http://support.planetcom.co.uk/download/FlashToolLinux.tgz
+* Firmware downloads: http://support.planetcom.co.uk/index.php/Gemini_Firmware
+* Linux scatter generator: http://support.planetcom.co.uk/download/partitionTool.html
 
 ## Bootloader
 
@@ -67,12 +67,12 @@ If you managed to get Linux installed, hold the appropriate button combination, 
 
 The current Debian image is extremely broken:
 
-1. There is no GPU driver and the screen redraw rate is excruciatingly slow - about 2 frames per second.
-2. Attempting to change the keyboard layout or session at the login screen will crash the device. Hold escape + voice button until it restarts.
-3. The rounded corners of the display hide parts of the panel.
-4. After you log in (the pasword is gemini) you will get another black screen which lasts for about a minute. Then a dialog will ask you which window manager you want. You get lx panel regardless of what you choose, so this seems a bit pointless.
-5. If you open QTerminal you will get a window where you can type things but nothing happens. UXTerm just gives a locale error. Xterm gives a working shell.
-6. The function key does not work, so you can't type any special characters like '-' and '/' which makes the shell completely useless anyway.
+* There is no GPU driver and the screen redraw rate is excruciatingly slow - about 2 frames per second.
+* Attempting to change the keyboard layout or session at the login screen will crash the device. Hold escape + voice button until it restarts.
+* The rounded corners of the display hide parts of the panel.
+* After you log in (the pasword is gemini) you will get another black screen which lasts for about a minute. Then a dialog will ask you which window manager you want. You get lx panel regardless of what you choose, so this seems a bit pointless.
+* If you open QTerminal you will get a window where you can type things but nothing happens. UXTerm just gives a locale error. Xterm gives a working shell.
+* The function key does not work, so you can't type any special characters like '-' and '/' which makes the shell completely useless anyway.
 
 To possibly fix some of these problems you need to follow the instructions at: https://github.com/gemian/gemini-keyboard-apps/wiki/DebianTP
 
