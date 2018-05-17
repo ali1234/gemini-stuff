@@ -78,5 +78,5 @@ To possibly fix some of these problems you need to follow the instructions at: h
 
 Note that you can only do this over ssh as you need to type at least one command containing '-'.
 
-
+To avoid having to figure out what the device IP address is, you can just "ssh localhost.lan" (since the default firmware currently doesn't even have a hostname, it uses localhost.
 
