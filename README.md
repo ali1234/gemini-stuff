@@ -1,11 +1,11 @@
-*** Gemini PDA Notes ***
+ *** Gemini PDA Notes ***
 
 Official Flashing Guide: http://support.planetcom.co.uk/index.php/Flashing_Guide
 Flashing tool for Linux: http://support.planetcom.co.uk/download/FlashToolLinux.tgz
 Firmware downloads: http://support.planetcom.co.uk/index.php/Gemini_Firmware
 Linux scatter generator: http://support.planetcom.co.uk/download/partitionTool.html
 
-** Bootloader **
+ ** Bootloader **
 
 Bootloader is controlled by the Escape key and the voice assistant key (the one and only hardware button.)
 
@@ -20,7 +20,7 @@ So for example, to boot Linux, which currently requires you to hold only the voi
 3. Press and hold the escape key until you feel the vibration, then immediately release it.
 4. Continue to hold the voice button until you see the penguin.
 
-** Flashing **
+ ** Flashing **
 
 In order to successfully flash, you need to have read write access to the serial ports on your system, and you need to blacklist the Gemini's BROM serial port so that Modem Manager does not interrupt the flashing connection. If you do not do the latter the Gemini will be stuck in DA mode. See below for how to recover from that.
 
@@ -57,7 +57,7 @@ It will not enumerate on USB and will just keep on running the Download Agent fi
 
 If you managed to get Linux installed, hold the appropriate button combination, and you should see the Planet logo with a Penguin in the bottom right corner. It is quite big, you will not miss it. After this the screen will go black for a very long time. Wait, and eventually you will get to the Linux login screen.
 
-** Linux **
+ ** Linux **
 
 There is no GPU driver and the screen redraw rate is excruciatingly slow - about 2 frames per second.
 
