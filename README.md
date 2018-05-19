@@ -91,5 +91,39 @@ To possibly fix some of these problems you need to follow the instructions at: h
 
 Note that you can only do this over ssh as you need to type at least one command containing '-'.
 
-To avoid having to figure out what the device IP address is, you can just "ssh localhost.lan" (since the default firmware currently doesn't even have a hostname, it uses localhost.
+To avoid having to figure out what the device IP address is, you can just "ssh localhost.lan" (since the default firmware currently doesn't even have a hostname, it uses localhost.)
+
+## Firmware
+
+Some of the files in the firmware update archive:
+
+* linux.img - Ext4 filesystem. Can be directly mounted.
+* system.img - Android sparse image file. Must be uncompressed first with simg2img. Then can be mounted as ext4.
+
+## Android
+
+After mounting system.img, the default apks are in /apps, /priv-apps, /vendor/apps, /vendor/priv-apps, and /vendor/operator/.
+
+The Gemini custom apps are in /vendor/operator. They are not dexified, which means that you can uninstall them. If you do this, you can't re-install them. Attempting to sideload or download them from Google Play results in an error message.
+
+Since they are not dexified, they can be decompiled with http://www.javadecompilers.com/apk.
+
+Decompiling LEDison reveals that android.app.NotificationManager has been patched with a new function for controlling the LEDs:
+
+```
+import android.app.NotificationManager;
+
+
+NotificationManager mNotificationManager;
+
+try {
+    mNotificationManager.openLed(5, r, g, b, 0);
+    mNotificationManager.openLed(4, r, g, b, 0);
+    mNotificationManager.openLed(3, r, g, b, 0);
+    mNotificationManager.openLed(2, r, g, b, 0);
+    mNotificationManager.openLed(1, r, g, b, 0);
+} catch (NoSuchMethodError e) {
+    Log.d(TAG, "No HW leds");
+}
+```
 
